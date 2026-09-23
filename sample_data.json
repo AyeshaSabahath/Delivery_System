@@ -4,11 +4,13 @@
        "W2": [50, 75],
        "W3": [100, 25]
     },
+    
     "agents": {
        "A1": [5, 5],
        "A2": [60, 60],
        "A3": [95, 30]
     },
+    
     "packages": [
        {"id": "P1", "warehouse": "W1", "destination": [30, 40]},
        {"id": "P2", "warehouse": "W2", "destination": [70, 90]},
