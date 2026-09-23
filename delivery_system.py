@@ -221,6 +221,7 @@ def simulate_agent_route(start_position, assigned_packages, warehouses, rng=None
 # ---------------------------------------------------------------------------
 # 5. Report generation
 # ---------------------------------------------------------------------------
+
 def generate_report(agents, warehouses, packages, new_agents=None, seed=None):
     assignment, all_agents = assign_packages(agents, warehouses, packages, new_agents)
     rng = random.Random(seed) if seed is not None else None
@@ -271,6 +272,7 @@ def generate_report(agents, warehouses, packages, new_agents=None, seed=None):
 # ---------------------------------------------------------------------------
 # 6. Bonus: ASCII route visualization
 # ---------------------------------------------------------------------------
+
 def render_ascii_map(warehouses, agents, packages, width=60, height=25):
     """Render a compact ASCII scatter-plot of warehouses (W), agent
     start positions (A), and package destinations (.) on a scaled grid.
@@ -308,6 +310,7 @@ def render_ascii_map(warehouses, agents, packages, width=60, height=25):
 # ---------------------------------------------------------------------------
 # 7. Bonus: export top performer to CSV
 # ---------------------------------------------------------------------------
+
 def export_top_performer_csv(report, path):
     best_agent = report.get("best_agent")
     with open(path, "w", newline="", encoding="utf-8") as f:
@@ -323,6 +326,7 @@ def export_top_performer_csv(report, path):
 # ---------------------------------------------------------------------------
 # 8. CLI entry point
 # ---------------------------------------------------------------------------
+
 def main():
     parser = argparse.ArgumentParser(description="FastBox Mystery Delivery System simulator")
     parser.add_argument("input", help="Path to the input JSON file")
