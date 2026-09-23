@@ -51,6 +51,7 @@ import random
 # below detects and accepts *both* shapes and converts them to one
 # internal representation. This is the most robust choice and costs
 # nothing at runtime.
+
 def load_data(path):
     """Read a JSON file from disk and parse it with the standard
     library `json` module (no external schema/validation libraries),
@@ -105,6 +106,7 @@ def _normalize_points(section, location_key="location"):
 # ---------------------------------------------------------------------------
 # 2. Distance calculation
 # ---------------------------------------------------------------------------
+
 def euclidean_distance(point_a, point_b):
     return math.sqrt((point_a[0] - point_b[0]) ** 2 + (point_a[1] - point_b[1]) ** 2)
 
@@ -112,6 +114,7 @@ def euclidean_distance(point_a, point_b):
 # ---------------------------------------------------------------------------
 # 3. Agent <-> package assignment
 # ---------------------------------------------------------------------------
+
 def assign_packages(agents, warehouses, packages, new_agents=None):
     """Assign each package to the nearest agent, measured as the
     Euclidean distance from the agent's current location to the
@@ -155,6 +158,7 @@ def assign_packages(agents, warehouses, packages, new_agents=None):
 # ---------------------------------------------------------------------------
 # 4. Route simulation
 # ---------------------------------------------------------------------------
+
 def simulate_agent_route(start_position, assigned_packages, warehouses, rng=None):
     """Simulate one agent's day: repeatedly travel to the nearest
     remaining package's warehouse, pick it up, and deliver it.
